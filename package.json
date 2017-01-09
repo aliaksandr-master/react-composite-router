@@ -2,8 +2,9 @@
   "name": "react-composite-router",
   "version": "1.0.0",
   "description": "predictable react router",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
+    "cleanup": "npm prune && npm i && npm dedupe",
     "test": "node_modules/.bin/jest app/* --coverage"
   },
   "repository": {
@@ -27,9 +28,13 @@
   },
   "homepage": "https://github.com/aliaksandr-master/react-composite-router#readme",
   "dependencies": {
-    "history": "4.5.0",
+    "babel-plugin-transform-runtime": "6.15.0",
+    "babel-polyfill": "6.20.0",
     "lodash": "4.17.4",
+    "react": "15.4.2",
+    "react-redux": "5.0.1",
     "recompose": "0.21.2",
+    "redux": "3.6.0",
     "reselect": "2.5.4",
     "urijs": "1.18.4"
   },
@@ -44,8 +49,25 @@
     "babel-preset-stage-2": "6.18.0",
     "babel-register": "6.18.0",
     "babel-runtime": "6.20.0",
+    "eslint": "3.12.2",
+    "eslint-config-airbnb": "13.0.0",
+    "eslint-config-eslint": "3.0.0",
+    "eslint-config-standard": "6.2.1",
+    "eslint-import-resolver-webpack": "0.8.0",
+    "eslint-loader": "1.6.1",
+    "eslint-plugin-import": "2.2.0",
+    "eslint-plugin-jsx-a11y": "3.0.2",
+    "eslint-plugin-promise": "3.4.0",
+    "eslint-plugin-react": "6.8.0",
+    "eslint-plugin-require-path-exists": "1.1.5",
+    "eslint-plugin-standard": "2.0.1",
+    "husky": "0.12.0",
     "jest": "18.1.0",
-    "jest-cli": "18.1.0"
+    "jest-cli": "18.1.0",
+    "webpack": "1.14.0"
+  },
+  "engines": {
+    "node": "7.2.0"
   },
   "jest": {
     "automock": false,
