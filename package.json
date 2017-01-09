@@ -27,6 +27,11 @@
   },
   "homepage": "https://github.com/aliaksandr-master/react-composite-router#readme",
   "dependencies": {
+    "history": "4.5.0",
+    "lodash": "4.17.4",
+    "recompose": "0.21.2",
+    "reselect": "2.5.4",
+    "urijs": "1.18.4"
   },
   "devDependencies": {
     "babel-core": "6.21.0",
