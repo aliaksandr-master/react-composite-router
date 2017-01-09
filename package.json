@@ -1,0 +1,29 @@
+{
+  "name": "react-composite-router",
+  "version": "1.0.0",
+  "description": "predictable react router",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aliaksandr-master/react-composite-router.git"
+  },
+  "keywords": [
+    "react",
+    "router",
+    "declarative",
+    "predictable",
+    "ui",
+    "composition",
+    "without",
+    "magic"
+  ],
+  "author": "alxe.master@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aliaksandr-master/react-composite-router/issues"
+  },
+  "homepage": "https://github.com/aliaksandr-master/react-composite-router#readme"
+}
