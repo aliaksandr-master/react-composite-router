@@ -4,7 +4,7 @@
   "description": "predictable react router",
   "main": "index.js",
   "scripts": {
-    "jest": "node_modules/.bin/jest app/* --coverage"
+    "test": "node_modules/.bin/jest app/* --coverage"
   },
   "repository": {
     "type": "git",
@@ -29,7 +29,16 @@
   "dependencies": {
   },
   "devDependencies": {
+    "babel-core": "6.21.0",
+    "babel-eslint": "7.1.1",
     "babel-jest": "18.0.0",
+    "babel-loader": "6.2.10",
+    "babel-preset-es2015": "6.18.0",
+    "babel-preset-es2016": "6.16.0",
+    "babel-preset-react": "6.16.0",
+    "babel-preset-stage-2": "6.18.0",
+    "babel-register": "6.18.0",
+    "babel-runtime": "6.20.0",
     "jest": "18.1.0",
     "jest-cli": "18.1.0"
   },
