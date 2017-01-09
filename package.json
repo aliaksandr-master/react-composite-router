@@ -4,7 +4,7 @@
   "description": "predictable react router",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage"
+    "jest": "node_modules/.bin/jest app/* --coverage"
   },
   "repository": {
     "type": "git",
@@ -25,5 +25,36 @@
   "bugs": {
     "url": "https://github.com/aliaksandr-master/react-composite-router/issues"
   },
-  "homepage": "https://github.com/aliaksandr-master/react-composite-router#readme"
+  "homepage": "https://github.com/aliaksandr-master/react-composite-router#readme",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "babel-jest": "18.0.0",
+    "jest": "18.1.0",
+    "jest-cli": "18.1.0"
+  },
+  "jest": {
+    "automock": false,
+    "notify": true,
+    "testEnvironment": "jsdom",
+    "cacheDirectory": ".tmp/jest-cache",
+    "coverageDirectory": ".tmp/tests-coverage-report",
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/__tests__/"
+    ],
+    "moduleFileExtensions": [
+      "",
+      "js",
+      "jsx"
+    ],
+    "testRegex": "/__tests__/.+?\\.test\\.js$",
+    "moduleDirectories": [
+      "node_modules"
+    ],
+    "verbose": false
+  }
 }
