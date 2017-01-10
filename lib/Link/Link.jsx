@@ -4,11 +4,11 @@ import React, { PropTypes } from 'react';
 import isFunction from 'lodash/isFunction';
 import { throwHiddenError } from '../util/log';
 import { calcLocation } from '../routing';
-import { assertTrimmedNonEmptyString, assertPlainObject, assertAvailableValues } from '../util/assert';
+import { assertTrimmedNonEmptyString, assertPlainObject, assertAvailableValues, assertAvailableProps } from '../util/assert';
 
 
 const isLeftClickEvent = (event) =>
-  event.button === 0;
+event.button === 0;
 
 
 
@@ -46,7 +46,7 @@ const Link = (props, context) => {
     const routeParams = { ...route.defaultParams, ...routerState.params, ...params };
 
     if (process.env.NODE_ENV !== 'production') {
-      assertAvailableValues(route.availableParams, 'Link params', params);
+      assertAvailableProps(route.availableParams, 'Link params', params);
     }
 
     location = calcLocation(route, routeParams);
