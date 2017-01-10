@@ -2,8 +2,6 @@
 [![npm](http://img.shields.io/npm/l/react-composite-router.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 [![Dependency Status](https://david-dm.org/aliaksandr-master/react-composite-router.svg?style=flat-square)](https://david-dm.org/aliaksandr-master/react-composite-router)
 [![devDependency Status](https://david-dm.org/aliaksandr-master/react-composite-router/dev-status.svg?style=flat-square)](https://david-dm.org/aliaksandr-master/react-composite-router#info=devDependencies)
-[![Build Status](https://travis-ci.org/aliaksandr-master/react-composite-router.svg?branch=master&style=flat-square)](https://travis-ci.org/aliaksandr-master/react-composite-router)
-[![Coverage Status](https://img.shields.io/coveralls/aliaksandr-master/react-composite-router.svg?style=flat-square)](https://coveralls.io/r/aliaksandr-master/react-composite-router?branch=master)
 
 # react-composite-router
 create constant objects/array/... by deep object.defineProperty
