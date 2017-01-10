@@ -53,7 +53,7 @@ const Link = (props, context) => {
     location = calcLocation(route, routeParams);
 
     isActive = history.location.pathname === location.pathname;
-    isActiveState = route.name === to || route.name.startsWith(to);
+    isActiveState = routerState.name === to || routerState.name.startsWith(to);
 
     href = history.createHref(location);
   }
