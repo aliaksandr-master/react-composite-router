@@ -69,3 +69,66 @@ const Root = () => (
 
 render(<Root/>, document.getElementById('root'));
 ```
+
+
+## Router
+Router.propTypes = {
+  history: PropTypes.shape({ // instance of history.js
+    location: PropTypes.shape({
+       pathname: PropTypes.string,
+       search: PropTypes.string,
+       hash: PropTypes.string
+    }).isRequired,
+    createHref: PropTypes.func.isRequired,
+    listen: PropTypes.func.isRequired
+  })
+  children: PropTypes.element.isRequired
+};
+
+history - instance of history.js
+
+## Link
+```javascript
+Link.propTypes = {
+  to: PropTypes.string.isRequired, // state name
+  params: PropTypes.object.isRequired, // stateParams
+  reload: PropTypes.bool.isRequired, // if it is true page will be reloaded after click  
+  target: PropTypes.string,
+  replace: PropTypes.bool.isRequired, // history.replace
+  onClick: PropTypes.func,
+  children: PropTypes.any.isRequired,
+  disabled: PropTypes.bool.isRequired,
+  className: PropTypes.string,
+  activeStateClass: PropTypes.string,  // when state or child of this state will be active
+  activeClass: PropTypes.string, // only if this state will be active
+  disabledClass: PropTypes.string // only if link is disabled
+}
+```
+
+## Slot
+```javascript
+
+Slot.propTypes = {
+  name: PropTypes.string.isRequired, // name of slot
+  props: PropTypes.object.isRequired, // props for component
+  render: PropTypes.func, // render function (Component, props, stateParams, stateName)
+  children: PropTypes.oneOfType([ PropTypes.func, PropTypes.element ]) // fallback children (if slot will be empty in composition). function (props, stateParams, stateName)
+};
+```
+
+## createRoute(name, definition)
+
+```javascript
+const definition = {
+  url: '/some/path/:id', // segment url,
+  params: {}, // default params
+  slots: { // slots by name
+    someSlotName: Component 
+  }
+};
+
+const route = createRoute('some', definition);
+
+route.create('some.child', definitionChild); // create an child. name must starts from parent name
+
+```
