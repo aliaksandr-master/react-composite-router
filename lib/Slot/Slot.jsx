@@ -7,7 +7,7 @@ import { assertTrimmedNonEmptyString, assertPlainObject } from '../util/assert';
 
 
 const Slot = (componentProps, context) => {
-  const { name, children, render, props } = componentProps;
+  const { name, children, render, props = {} } = componentProps;
   const { routerSlotsComposition, routerState } = context;
 
   if (process.env.NODE_ENV !== 'production') {
@@ -18,7 +18,11 @@ const Slot = (componentProps, context) => {
   if (routerSlotsComposition.hasOwnProperty(name)) {
     const ViewComponent = routerSlotsComposition[name];
 
-    return render ? render(ViewComponent, props, routerState.params, routerState.name) : <ViewComponent {...props} />;
+    if (!render) {
+      return (<ViewComponent {...props} />);
+    }
+
+    return render(ViewComponent, routerState.params, routerState.name);
   }
 
   if (!children) {
@@ -36,7 +40,7 @@ const Slot = (componentProps, context) => {
 
 Slot.propTypes = {
   name: PropTypes.string.isRequired,
-  props: PropTypes.object.isRequired,
+  props: PropTypes.object,
   render: PropTypes.func,
   children: PropTypes.oneOfType([ PropTypes.func, PropTypes.element ])
 };
@@ -44,7 +48,6 @@ Slot.propTypes = {
 
 
 Slot.defaultProps = {
-  props: {}
 };
 
 
