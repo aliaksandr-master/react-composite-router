@@ -5,6 +5,7 @@ import isFunction from 'lodash/isFunction';
 import { throwHiddenError } from '../util/log';
 import { calcLocation } from '../routing';
 import { assertTrimmedNonEmptyString, assertPlainObject, assertAvailableValues, assertAvailableProps } from '../util/assert';
+import historyPropTypes from '../util/historyPropTypes';
 
 
 const isLeftClickEvent = (event) =>
@@ -130,7 +131,7 @@ Link.defaultProps = {
 
 
 Link.contextTypes = {
-  history: React.PropTypes.object.isRequired,
+  history: historyPropTypes(),
   routerRoutesByName: React.PropTypes.object.isRequired,
   routerState: React.PropTypes.object.isRequired
 };
