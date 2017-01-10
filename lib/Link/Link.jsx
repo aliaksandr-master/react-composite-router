@@ -18,7 +18,7 @@ const isModifiedEvent = (event) =>
 
 
 const Link = (props, context) => {
-  const { to, className, disabled, children, reload, onClick, replace, target, activeClass, activeStateClass, disabledClass, params, ...otherProps } = props;
+  const { to, className, disabled, children, reload, onClick, replace, target, activeClass, activeStateClass, disabledClass, params = {}, ...otherProps } = props;
   const { routerState, routerRoutesByName, history } = context;
 
   if (process.env.NODE_ENV !== 'production') {
@@ -108,7 +108,7 @@ Link.propTypes = {
   to: PropTypes.string.isRequired,
   disabled: PropTypes.bool.isRequired,
   className: PropTypes.string,
-  params: PropTypes.object.isRequired,
+  params: PropTypes.object,
   reload: PropTypes.bool.isRequired,
   target: PropTypes.string,
   replace: PropTypes.bool.isRequired,
@@ -124,8 +124,7 @@ Link.propTypes = {
 Link.defaultProps = {
   reload: false,
   replace: false,
-  disabled: false,
-  params: {}
+  disabled: false
 };
 
 
