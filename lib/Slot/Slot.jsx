@@ -20,7 +20,7 @@ const Slot = (componentProps, context) => {
     const ViewComponent = routerSlotsComposition[name];
 
     if (!render) {
-      return (<div><ViewComponent/><span>{Object.keys(routerSlotsComposition).join(',')}</span></div>);
+      return (<ViewComponent {...props}/>);
     }
 
     return render(ViewComponent, routerState.params, routerState.name);
