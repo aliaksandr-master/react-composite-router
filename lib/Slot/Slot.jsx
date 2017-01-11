@@ -44,8 +44,7 @@ Slot.propTypes = {
   props: PropTypes.object,
   render: PropTypes.func,
   children: PropTypes.oneOfType([ PropTypes.func, PropTypes.element ]),
-  routerState: PropTypes.object.isRequired,
-  routerSlotsComposition: PropTypes.objectOf(PropTypes.func.isRequired)
+  routerState: PropTypes.shape({ name: PropTypes.string.isRequired, params: PropTypes.object.isRequired })
 };
 
 
