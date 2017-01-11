@@ -35,6 +35,7 @@ const Link = (props) => {
     activeStateClass,
     disabledClass,
     params = {},
+    dispatch,
     ...otherProps
   } = props;
 

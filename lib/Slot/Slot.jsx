@@ -7,19 +7,19 @@ import { assertTrimmedNonEmptyString, assertPlainObject } from '../util/assert';
 
 
 const Slot = (componentProps, context) => {
-  const { name, children, render, props = {}, routerSlotsComposition, routerState } = componentProps;
+  const { name, children, render, props = {}, routerRoutesByName, routerState } = componentProps;
 
   if (process.env.NODE_ENV !== 'production') {
     assertTrimmedNonEmptyString('Slot name', name);
     assertPlainObject('Slot props', props);
   }
 
+  const routerSlotsComposition = routerRoutesByName.hasOwnProperty(routerState.name) ? routerRoutesByName[routerState.name].slots : {}
 
   if (routerSlotsComposition.hasOwnProperty(name)) {
     const ViewComponent = routerSlotsComposition[name];
 
     if (!render) {
-      console.log(name, 2222, Object.keys(routerSlotsComposition));
       return (<div><ViewComponent/><span>{Object.keys(routerSlotsComposition).join(',')}</span></div>);
     }
 
