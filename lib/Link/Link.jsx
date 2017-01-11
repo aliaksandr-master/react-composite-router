@@ -18,9 +18,26 @@ const isModifiedEvent = (event) =>
 
 
 
-const Link = (props, context) => {
-  const { to, className, disabled, children, reload, onClick, replace, target, activeClass, activeStateClass, disabledClass, params = {}, ...otherProps } = props;
-  const { routerState, routerRoutesByName, history } = context;
+const Link = (props) => {
+  const {
+    routerState,
+    routerRoutesByName,
+    history,
+    to,
+    className,
+    disabled,
+    children,
+    reload,
+    onClick,
+    replace,
+    target,
+    activeClass,
+    activeStateClass,
+    disabledClass,
+    params = {},
+    dispatch,
+    ...otherProps
+  } = props;
 
   if (process.env.NODE_ENV !== 'production') {
     assertTrimmedNonEmptyString('Link to', to);
@@ -117,7 +134,10 @@ Link.propTypes = {
   children: PropTypes.any.isRequired,
   activeStateClass: PropTypes.string,
   activeClass: PropTypes.string,
-  disabledClass: PropTypes.string
+  disabledClass: PropTypes.string,
+  history: historyPropTypes(),
+  routerRoutesByName: PropTypes.object.isRequired,
+  routerState: PropTypes.object.isRequired
 };
 
 
@@ -131,9 +151,6 @@ Link.defaultProps = {
 
 
 Link.contextTypes = {
-  history: historyPropTypes(),
-  routerRoutesByName: React.PropTypes.object.isRequired,
-  routerState: React.PropTypes.object.isRequired
 };
 
 

@@ -7,19 +7,20 @@ import { assertTrimmedNonEmptyString, assertPlainObject } from '../util/assert';
 
 
 const Slot = (componentProps, context) => {
-  const { name, children, render, props = {} } = componentProps;
-  const { routerSlotsComposition, routerState } = context;
+  const { name, children, render, props = {}, routerRoutesByName, routerState } = componentProps;
 
   if (process.env.NODE_ENV !== 'production') {
     assertTrimmedNonEmptyString('Slot name', name);
     assertPlainObject('Slot props', props);
   }
 
+  const routerSlotsComposition = routerRoutesByName.hasOwnProperty(routerState.name) ? routerRoutesByName[routerState.name].slots : {}
+
   if (routerSlotsComposition.hasOwnProperty(name)) {
     const ViewComponent = routerSlotsComposition[name];
 
     if (!render) {
-      return (<ViewComponent {...props} />);
+      return (<div><ViewComponent/><span>{Object.keys(routerSlotsComposition).join(',')}</span></div>);
     }
 
     return render(ViewComponent, routerState.params, routerState.name);
@@ -30,7 +31,7 @@ const Slot = (componentProps, context) => {
   }
 
   if (isFunction(children)) {
-    return children(props, routerState.params, routerState.name);
+    return children(routerState.params, routerState.name);
   }
 
   return children;
@@ -42,19 +43,14 @@ Slot.propTypes = {
   name: PropTypes.string.isRequired,
   props: PropTypes.object,
   render: PropTypes.func,
-  children: PropTypes.oneOfType([ PropTypes.func, PropTypes.element ])
+  children: PropTypes.oneOfType([ PropTypes.func, PropTypes.element ]),
+  routerState: PropTypes.object.isRequired,
+  routerSlotsComposition: PropTypes.objectOf(PropTypes.func.isRequired)
 };
 
 
 
 Slot.defaultProps = {
-};
-
-
-
-Slot.contextTypes = {
-  routerSlotsComposition: PropTypes.objectOf(PropTypes.func.isRequired),
-  routerState: PropTypes.object.isRequired
 };
 
 
