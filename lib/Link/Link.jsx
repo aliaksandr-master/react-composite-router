@@ -61,13 +61,8 @@ const Link = (props) => {
     location = null;
   } else {
     const route = routerRoutesByName[to];
-    const routeParams = { ...route.defaultParams, ...routerState.params, ...params };
 
-    if (process.env.NODE_ENV !== 'production') {
-      assertAvailableProps(route.availableParams, 'Link params', params);
-    }
-
-    location = calcLocation(route, routeParams);
+    location = calcLocation(route, routerState.params, params);
 
     isActive = history.location.pathname === location.pathname;
     isActiveState = routerState.name === to || routerState.name.startsWith(to);
