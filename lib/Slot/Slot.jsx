@@ -6,7 +6,7 @@ import { assertTrimmedNonEmptyString, assertPlainObject } from '../util/assert';
 
 
 
-const Slot = (componentProps, context) => {
+const Slot = (componentProps) => {
   const { name, children, render, props = {}, routerRoutesByName, routerState } = componentProps;
 
   if (process.env.NODE_ENV !== 'production') {
