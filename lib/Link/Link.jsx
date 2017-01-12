@@ -3,7 +3,7 @@
 import React, { PropTypes } from 'react';
 import isFunction from 'lodash/isFunction';
 import { throwHiddenError } from '../util/log';
-import { calcLocation } from '../routing';
+import { calcLocation, moveTo } from '../routing';
 import { assertTrimmedNonEmptyString, assertPlainObject, assertAvailableValues, assertAvailableProps } from '../util/assert';
 import historyPropTypes from '../util/historyPropTypes';
 
@@ -35,17 +35,11 @@ const Link = (props) => {
     activeStateClass,
     disabledClass,
     params = {},
-    dispatch,
     ...otherProps
   } = props;
 
   if (process.env.NODE_ENV !== 'production') {
     assertTrimmedNonEmptyString('Link to', to);
-
-    if (target != null) {
-      assertAvailableValues([ '_blank' ], 'Link target', target);
-    }
-
     assertPlainObject('Link params', params);
   }
 
@@ -60,13 +54,9 @@ const Link = (props) => {
     href = null;
     location = null;
   } else {
-    const route = routerRoutesByName[to];
-
-    location = calcLocation(route, routerState.params, params);
-
+    location = calcLocation(routerRoutesByName[to], routerState.params, params);
     isActive = history.location.pathname === location.pathname;
     isActiveState = routerState.name === to || routerState.name.startsWith(to);
-
     href = history.createHref(location);
   }
 
@@ -84,13 +74,7 @@ const Link = (props) => {
     ) {
       event.preventDefault();
 
-      if (location) {
-        if (replace) {
-          history.replace(location);
-        } else {
-          history.push(location);
-        }
-      }
+      moveTo(history, location, { replace, reload });
     }
   };
 
@@ -123,7 +107,7 @@ Link.propTypes = {
   className: PropTypes.string,
   params: PropTypes.object,
   reload: PropTypes.bool.isRequired,
-  target: PropTypes.string,
+  target: PropTypes.oneOf([ '_blank' ]),
   replace: PropTypes.bool.isRequired,
   onClick: PropTypes.func,
   children: PropTypes.any.isRequired,
