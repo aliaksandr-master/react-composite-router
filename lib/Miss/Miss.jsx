@@ -1,7 +1,6 @@
 /* eslint-env browser */
 
 import React, { PropTypes } from 'react';
-import isFunction from 'lodash/isFunction';
 
 
 
@@ -12,7 +11,7 @@ const Miss = (componentProps) => {
     return null;
   }
 
-  if (isFunction(children)) {
+  if (typeof children === 'function') {
     return children();
   }
 
