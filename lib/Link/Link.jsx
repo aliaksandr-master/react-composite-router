@@ -1,11 +1,8 @@
 /* eslint-env browser */
 
 import React, { PropTypes } from 'react';
-import isFunction from 'lodash/isFunction';
-import { throwHiddenError } from '../util/log';
 import { calcLocation, moveTo } from '../routing';
-import { assertTrimmedNonEmptyString, assertPlainObject, assertAvailableValues, assertAvailableProps } from '../util/assert';
-import historyPropTypes from '../util/historyPropTypes';
+import historyPropTypes from '../historyPropTypes';
 
 
 const isLeftClickEvent = (event) =>
@@ -23,7 +20,7 @@ const Link = (props) => {
     routerState,
     routerRoutesByName,
     history,
-    to,
+    state,
     className,
     disabled,
     children,
@@ -38,27 +35,10 @@ const Link = (props) => {
     ...otherProps
   } = props;
 
-  if (process.env.NODE_ENV !== 'production') {
-    assertTrimmedNonEmptyString('Link to', to);
-    assertPlainObject('Link params', params);
-  }
-
-  let isActive = false;
-  let isActiveState = false;
-
-  let href = null;
-  let location = null;
-
-  if (!routerRoutesByName.hasOwnProperty(to)) {
-    throwHiddenError(`Invalid state name "${to}" in Link[to]`);
-    href = null;
-    location = null;
-  } else {
-    location = calcLocation(routerRoutesByName[to], routerState.params, params);
-    isActive = history.location.pathname === location.pathname;
-    isActiveState = routerState.name === to || routerState.name.startsWith(to);
-    href = history.createHref(location);
-  }
+  const location = calcLocation(routerRoutesByName, state, routerState.params, params);
+  const isActive = history.location.pathname === location.pathname;
+  const isActiveState = routerState.name === state || routerState.name.startsWith(state);
+  const href = history.createHref(location);
 
   const handleClick = (event) => {
     if (onClick) {
@@ -94,7 +74,7 @@ const Link = (props) => {
       disabled={disabled}
       onClick={handleClick}
     >
-      {isFunction(children) ? children({ isActive, disabled, isActiveState }, routerState) : children}
+      {typeof children === 'function' ? children({ isActive, disabled, isActiveState }, routerState) : children}
     </a>
   );
 };
@@ -102,21 +82,21 @@ const Link = (props) => {
 
 
 Link.propTypes = {
-  to: PropTypes.string.isRequired,
-  disabled: PropTypes.bool.isRequired,
-  className: PropTypes.string,
+  state: PropTypes.string.isRequired,
   params: PropTypes.object,
   reload: PropTypes.bool.isRequired,
   target: PropTypes.oneOf([ '_blank' ]),
   replace: PropTypes.bool.isRequired,
   onClick: PropTypes.func,
-  children: PropTypes.any.isRequired,
-  activeStateClass: PropTypes.string,
-  activeClass: PropTypes.string,
-  disabledClass: PropTypes.string,
   history: historyPropTypes(),
-  routerRoutesByName: PropTypes.object.isRequired,
-  routerState: PropTypes.object.isRequired
+  disabled: PropTypes.bool.isRequired,
+  children: PropTypes.any.isRequired,
+  className: PropTypes.string,
+  activeClass: PropTypes.string,
+  routerState: PropTypes.object.isRequired,
+  disabledClass: PropTypes.string,
+  activeStateClass: PropTypes.string,
+  routerRoutesByName: PropTypes.object.isRequired
 };
 
 
