@@ -1,8 +1,7 @@
 /* eslint-env browser */
 
 import React, { PropTypes } from 'react';
-import isFunction from 'lodash/isFunction';
-import { assertTrimmedNonEmptyString, assertPlainObject } from '../util/assert';
+import { assertTrimmedNonEmptyString, assertPlainObject } from '../assert';
 
 
 
@@ -30,7 +29,7 @@ const Slot = (componentProps) => {
     return null;
   }
 
-  if (isFunction(children)) {
+  if (typeof children === 'function') {
     return children(routerState.params, routerState.name);
   }
 
