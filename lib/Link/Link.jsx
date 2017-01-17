@@ -90,7 +90,7 @@ Link.propTypes = {
   onClick: PropTypes.func,
   history: historyPropTypes(),
   disabled: PropTypes.bool.isRequired,
-  children: PropTypes.any.isRequired,
+  children: PropTypes.node,
   className: PropTypes.string,
   activeClass: PropTypes.string,
   routerState: PropTypes.object.isRequired,

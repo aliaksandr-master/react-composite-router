@@ -9,7 +9,7 @@ const Router = ({ children }) => children;
 
 
 Router.propTypes = {
-  children: PropTypes.element.isRequired
+  children: PropTypes.node
 };
 
 
