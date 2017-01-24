@@ -3,6 +3,7 @@
 import React, { PropTypes } from 'react';
 import { calcLocation, moveTo } from '../routing';
 import historyPropTypes from '../historyPropTypes';
+import { assertPlainObject } from '../assert';
 
 
 const isLeftClickEvent = (event) =>
@@ -35,7 +36,13 @@ const Link = (props) => {
     ...otherProps
   } = props;
 
-  const location = calcLocation(routerRoutesByName, state, routerState.params, params);
+  if (!routerRoutesByName.hasOwnProperty(state)) {
+    throw new Error(`Link state "${state}" not found`);
+  }
+
+  assertPlainObject('Link params', params);
+
+  const location = calcLocation(routerState, routerRoutesByName[state], params);
   const isActive = history.location.pathname === location.pathname;
   const isActiveState = routerState.name === state || routerState.name.startsWith(state);
   const href = history.createHref(location);
