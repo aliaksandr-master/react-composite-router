@@ -1,6 +1,6 @@
 {
   "name": "react-composite-router",
-  "version": "1.4.9",
+  "version": "1.4.10",
   "description": "predictable react router",
   "main": "lib/index.js",
   "scripts": {
