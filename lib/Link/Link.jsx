@@ -91,19 +91,19 @@ const Link = (props) => {
 Link.propTypes = {
   state: PropTypes.string.isRequired,
   params: PropTypes.object,
-  reload: PropTypes.bool.isRequired,
+  reload: PropTypes.bool,
   target: PropTypes.oneOf([ '_blank' ]),
-  replace: PropTypes.bool.isRequired,
+  replace: PropTypes.bool,
   onClick: PropTypes.func,
   history: historyPropTypes(),
-  disabled: PropTypes.bool.isRequired,
+  disabled: PropTypes.bool,
   children: PropTypes.oneOfType([ PropTypes.node, PropTypes.func ]).isRequired,
   className: PropTypes.string,
   activeClass: PropTypes.string,
-  routerState: PropTypes.object.isRequired,
+  routerState: PropTypes.object,
   disabledClass: PropTypes.string,
   activeStateClass: PropTypes.string,
-  routerRoutesByName: PropTypes.object.isRequired
+  routerRoutesByName: PropTypes.object
 };
 
 
