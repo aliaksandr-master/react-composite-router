@@ -1,6 +1,6 @@
 {
   "name": "react-composite-router",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "predictable react router",
   "main": "lib/index.js",
   "scripts": {
@@ -27,8 +27,7 @@
     "url": "https://github.com/aliaksandr-master/react-composite-router/issues"
   },
   "homepage": "https://github.com/aliaksandr-master/react-composite-router#readme",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel-core": "6.21.0",
     "babel-eslint": "7.1.1",
