@@ -112,7 +112,7 @@ Link.propTypes = {
 
 Link.defaultProps = {
   reload: false,
-  reset: true,
+  reset: false,
   replace: false,
   disabled: false
 };
