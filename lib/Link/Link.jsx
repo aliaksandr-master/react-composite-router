@@ -19,6 +19,7 @@ const isModifiedEvent = (event) =>
 const Link = (props) => {
   const {
     routerState,
+    reset,
     routerRoutesByName,
     history,
     state,
@@ -42,7 +43,7 @@ const Link = (props) => {
 
   assertPlainObject('Link params', params);
 
-  const location = calcLocation(routerState, routerRoutesByName[state], params);
+  const location = calcLocation(routerState, routerRoutesByName[state], params, reset);
   const isActive = history.location.pathname === location.pathname;
   const isActiveState = routerState.name === state || routerState.name.startsWith(state);
   const href = history.createHref(location);
@@ -90,6 +91,7 @@ const Link = (props) => {
 
 Link.propTypes = {
   state: PropTypes.string.isRequired,
+  reset: PropTypes.bool,
   params: PropTypes.object,
   reload: PropTypes.bool,
   target: PropTypes.oneOf([ '_blank' ]),
@@ -110,6 +112,7 @@ Link.propTypes = {
 
 Link.defaultProps = {
   reload: false,
+  reset: true,
   replace: false,
   disabled: false
 };
