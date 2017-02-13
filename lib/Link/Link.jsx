@@ -44,8 +44,8 @@ const Link = (props) => {
   assertPlainObject('Link params', params);
 
   const location = calcLocation(routerState, routerRoutesByName[state], params, reset);
-  const isActive = history.location.pathname === location.pathname;
-  const isActiveState = routerState.name === state || routerState.name.startsWith(state);
+  const isActive = routerState.name === state;
+  const isActiveState = isActive || routerState.name.startsWith(`${state}.`);
   const href = history.createHref(location);
 
   const handleClick = (event) => {
