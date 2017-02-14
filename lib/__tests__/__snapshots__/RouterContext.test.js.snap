@@ -1,0 +1,82 @@
+exports[`RouterContext should calc location 1`] = `
+Object {
+  "hash": "",
+  "pathname": "/some-state",
+  "search": "some=3",
+}
+`;
+
+exports[`RouterContext should calc location 2`] = `
+RouterContext {
+  "_changeListeners": Array [],
+  "history": Object {
+    "createHref": [Function],
+    "listen": [Function],
+    "location": Object {
+      "hash": "",
+      "pathname": "",
+      "search": "",
+    },
+    "push": [Function],
+    "replace": [Function],
+  },
+  "routesByName": Object {
+    "state": Object {
+      "availableParams": Array [
+        "some",
+        "_hello",
+      ],
+      "name": "state",
+      "params": Object {
+        "_hello": 3,
+      },
+      "pathMask": "/some-state",
+      "pathMaskParams": Array [],
+      "searchParams": Array [
+        "some",
+      ],
+    },
+  },
+  "state": Object {
+    "composition": Object {},
+    "initialized": undefined,
+    "name": "some",
+    "params": Object {
+      "some": 4,
+    },
+  },
+}
+`;
+
+exports[`RouterContext should destroy 1`] = `
+RouterContext {
+  "_changeListeners": Array [
+    [Function],
+  ],
+  "history": Object {},
+  "routesByName": Object {},
+  "state": Object {
+    "composition": Object {},
+    "initialized": true,
+    "name": "some",
+    "params": Object {},
+  },
+}
+`;
+
+exports[`RouterContext should run every listener 1`] = `
+RouterContext {
+  "_changeListeners": Array [
+    [Function],
+    [Function],
+  ],
+  "history": Object {},
+  "routesByName": Object {},
+  "state": Object {
+    "composition": Object {},
+    "initialized": true,
+    "name": "",
+    "params": Object {},
+  },
+}
+`;

@@ -2,13 +2,7 @@ exports[`rendering should render something 1`] = `
 <a
   className=""
   disabled={false}
-  href={
-    Object {
-      "hash": "",
-      "pathname": "/",
-      "search": "",
-    }
-  }
+  href="/"
   onClick={[Function]}
   target={undefined}>
   Hello!

@@ -6,7 +6,7 @@ exports[`rendering should render something 1`] = `
   <a
     className=""
     disabled={false}
-    href=""
+    href="state"
     onClick={[Function]}
     target={undefined}>
     Some
