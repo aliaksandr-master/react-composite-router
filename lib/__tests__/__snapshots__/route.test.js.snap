@@ -1,6 +1,6 @@
 exports[`route should create some route 1`] = `
 Object {
-  "some": Object {
+  "some": Route {
     "additionalParams": Array [
       "_additional",
     ],
@@ -28,7 +28,7 @@ Object {
     "slots": Object {},
     "url": "/some/:id",
   },
-  "some.child": Object {
+  "some.child": Route {
     "additionalParams": Array [
       "_additional",
     ],
@@ -68,7 +68,7 @@ Object {
 
 exports[`route should create some route 2`] = `
 Object {
-  "second": Object {
+  "second": Route {
     "additionalParams": Array [],
     "availableParams": Array [],
     "availableUrlParams": Array [],
@@ -84,7 +84,7 @@ Object {
     "slots": Object {},
     "url": "/second",
   },
-  "some": Object {
+  "some": Route {
     "additionalParams": Array [
       "_additional",
     ],
@@ -112,7 +112,7 @@ Object {
     "slots": Object {},
     "url": "/some/:id",
   },
-  "some.child": Object {
+  "some.child": Route {
     "additionalParams": Array [
       "_additional",
     ],

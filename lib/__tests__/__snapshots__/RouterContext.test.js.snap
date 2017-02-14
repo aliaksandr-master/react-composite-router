@@ -21,20 +21,32 @@ RouterContext {
     "replace": [Function],
   },
   "routesByName": Object {
-    "state": Object {
+    "state": Route {
+      "additionalParams": Array [
+        "_hello",
+      ],
       "availableParams": Array [
         "some",
         "_hello",
+      ],
+      "availableUrlParams": Array [
+        "some",
       ],
       "name": "state",
       "params": Object {
         "_hello": 3,
       },
+      "path": "/some-state",
       "pathMask": "/some-state",
+      "pathMaskExp": /^\\/some-state$/,
+      "pathMaskExpSrc": "/some-state",
       "pathMaskParams": Array [],
+      "reroute": null,
       "searchParams": Array [
         "some",
       ],
+      "slots": Object {},
+      "url": "/some-state?some",
     },
   },
   "state": Object {
