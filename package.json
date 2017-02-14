@@ -58,9 +58,7 @@
     "jest-cli": "18.1.0",
     "react": "15.4.2",
     "react-redux": "5.0.1",
-    "recompose": "0.21.2",
     "redux": "3.6.0",
-    "reselect": "2.5.4",
     "lodash": "4.17.4",
     "urijs": "1.18.4",
     "webpack": "1.14.0"
@@ -68,9 +66,7 @@
   "peerDependencies": {
     "react": ">= 15.4.2",
     "react-redux": ">= 5.0.1",
-    "recompose": ">= 0.21.2",
     "redux": ">= 3.6.0",
-    "reselect": ">= 2.5.4",
     "lodash": ">= 4.17.4",
     "urijs": ">= 1.18.4"
   },
