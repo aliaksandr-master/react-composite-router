@@ -56,10 +56,12 @@
     "husky": "0.12.0",
     "jest": "18.1.0",
     "jest-cli": "18.1.0",
+    "lodash": "4.17.4",
     "react": "15.4.2",
     "react-redux": "5.0.1",
+    "react-test-renderer": "15.4.2",
+    "react-with-context": "1.0.2",
     "redux": "3.6.0",
-    "lodash": "4.17.4",
     "urijs": "1.18.4",
     "webpack": "1.14.0"
   },
