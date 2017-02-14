@@ -1,0 +1,15 @@
+exports[`rendering should render something 1`] = `
+<div>
+  <span>
+    Hello!
+  </span>
+  <a
+    className=""
+    disabled={false}
+    href=""
+    onClick={[Function]}
+    target={undefined}>
+    Some
+  </a>
+</div>
+`;

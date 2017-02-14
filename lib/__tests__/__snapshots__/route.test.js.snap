@@ -1,0 +1,151 @@
+exports[`route should create some route 1`] = `
+Object {
+  "some": Object {
+    "additionalParams": Array [
+      "_additional",
+    ],
+    "availableParams": Array [
+      "id",
+      "_additional",
+    ],
+    "availableUrlParams": Array [
+      "id",
+    ],
+    "name": "some",
+    "params": Object {
+      "_additional": true,
+      "id": "-1",
+    },
+    "path": "/some/:id",
+    "pathMask": "/some/{{id}}",
+    "pathMaskExp": /^\\/some\\/([^\\/]+)$/,
+    "pathMaskExpSrc": "/some/([^/]+)",
+    "pathMaskParams": Array [
+      "id",
+    ],
+    "reroute": null,
+    "searchParams": Array [],
+    "slots": Object {},
+    "url": "/some/:id",
+  },
+  "some.child": Object {
+    "additionalParams": Array [
+      "_additional",
+    ],
+    "availableParams": Array [
+      "some",
+      "param",
+      "id",
+      "_additional",
+    ],
+    "availableUrlParams": Array [
+      "some",
+      "param",
+      "id",
+    ],
+    "name": "some.child",
+    "params": Object {
+      "_additional": true,
+      "id": "-1",
+    },
+    "path": "/some/:id/child",
+    "pathMask": "/some/{{id}}/child",
+    "pathMaskExp": /^\\/some\\/([^\\/]+)\\/child$/,
+    "pathMaskExpSrc": "/some/([^/]+)/child",
+    "pathMaskParams": Array [
+      "id",
+    ],
+    "reroute": null,
+    "searchParams": Array [
+      "some",
+      "param",
+    ],
+    "slots": Object {},
+    "url": "/some/:id/child?some&param",
+  },
+}
+`;
+
+exports[`route should create some route 2`] = `
+Object {
+  "second": Object {
+    "additionalParams": Array [],
+    "availableParams": Array [],
+    "availableUrlParams": Array [],
+    "name": "second",
+    "params": Object {},
+    "path": "/second",
+    "pathMask": "/second",
+    "pathMaskExp": /^\\/second$/,
+    "pathMaskExpSrc": "/second",
+    "pathMaskParams": Array [],
+    "reroute": null,
+    "searchParams": Array [],
+    "slots": Object {},
+    "url": "/second",
+  },
+  "some": Object {
+    "additionalParams": Array [
+      "_additional",
+    ],
+    "availableParams": Array [
+      "id",
+      "_additional",
+    ],
+    "availableUrlParams": Array [
+      "id",
+    ],
+    "name": "some",
+    "params": Object {
+      "_additional": true,
+      "id": "-1",
+    },
+    "path": "/some/:id",
+    "pathMask": "/some/{{id}}",
+    "pathMaskExp": /^\\/some\\/([^\\/]+)$/,
+    "pathMaskExpSrc": "/some/([^/]+)",
+    "pathMaskParams": Array [
+      "id",
+    ],
+    "reroute": null,
+    "searchParams": Array [],
+    "slots": Object {},
+    "url": "/some/:id",
+  },
+  "some.child": Object {
+    "additionalParams": Array [
+      "_additional",
+    ],
+    "availableParams": Array [
+      "some",
+      "param",
+      "id",
+      "_additional",
+    ],
+    "availableUrlParams": Array [
+      "some",
+      "param",
+      "id",
+    ],
+    "name": "some.child",
+    "params": Object {
+      "_additional": true,
+      "id": "-1",
+    },
+    "path": "/some/:id/child",
+    "pathMask": "/some/{{id}}/child",
+    "pathMaskExp": /^\\/some\\/([^\\/]+)\\/child$/,
+    "pathMaskExpSrc": "/some/([^/]+)/child",
+    "pathMaskParams": Array [
+      "id",
+    ],
+    "reroute": null,
+    "searchParams": Array [
+      "some",
+      "param",
+    ],
+    "slots": Object {},
+    "url": "/some/:id/child?some&param",
+  },
+}
+`;

@@ -1,0 +1,23 @@
+exports[`rendering should render fallback function 1`] = `
+<span>
+  Hello!
+</span>
+`;
+
+exports[`rendering should render function 1`] = `
+<span>
+  Hello!
+</span>
+`;
+
+exports[`rendering should render slot 1`] = `
+<span>
+  Hello
+</span>
+`;
+
+exports[`rendering should render something 1`] = `
+<span>
+  Hello!
+</span>
+`;
