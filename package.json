@@ -7,7 +7,7 @@
     "cleanup": "npm prune && npm i && npm dedupe",
     "precommit": "npm test",
     "prepush": "npm test",
-    "test": "node_modules/.bin/jest -c=jest-config.json --coverage"
+    "test": "node_modules/.bin/eslint --color --config ./.eslintrc.json lib/**/*.js && node_modules/.bin/jest -c=jest-config.json --coverage"
   },
   "repository": {
     "type": "git",
