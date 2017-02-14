@@ -11,5 +11,6 @@ exports[`rendering should render something 1`] = `
     target={undefined}>
     Some
   </a>
+  <noscript />
 </div>
 `;

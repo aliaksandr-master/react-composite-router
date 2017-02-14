@@ -1,1 +1,1 @@
-exports[`rendering should render something 1`] = `null`;
+exports[`rendering should render something 1`] = `<noscript />`;
