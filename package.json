@@ -5,6 +5,8 @@
   "main": "lib/index.js",
   "scripts": {
     "cleanup": "npm prune && npm i && npm dedupe",
+    "precommit": "npm test",
+    "prepush": "npm test",
     "test": "node_modules/.bin/jest -c=jest-config.json --coverage"
   },
   "repository": {
