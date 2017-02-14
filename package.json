@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "cleanup": "npm prune && npm i && npm dedupe",
-    "test": "node_modules/.bin/jest app/* --coverage"
+    "test": "node_modules/.bin/jest -c=jest-config.json --coverage"
   },
   "repository": {
     "type": "git",
@@ -72,29 +72,5 @@
   },
   "engines": {
     "node": "7.2.0"
-  },
-  "jest": {
-    "automock": false,
-    "notify": true,
-    "testEnvironment": "jsdom",
-    "cacheDirectory": ".tmp/jest-cache",
-    "coverageDirectory": ".tmp/tests-coverage-report",
-    "collectCoverageFrom": [
-      "**/*.{js,jsx}"
-    ],
-    "coveragePathIgnorePatterns": [
-      "/node_modules/",
-      "/__tests__/"
-    ],
-    "moduleFileExtensions": [
-      "",
-      "js",
-      "jsx"
-    ],
-    "testRegex": "/__tests__/.+?\\.test\\.js$",
-    "moduleDirectories": [
-      "node_modules"
-    ],
-    "verbose": false
   }
 }
