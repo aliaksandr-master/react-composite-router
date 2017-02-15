@@ -1,0 +1,14 @@
+exports[`Route should calc new location 1`] = `
+Object {
+  "hash": "",
+  "pathname": "/hello/123",
+  "search": "",
+}
+`;
+
+exports[`Route should parse location 1`] = `
+Object {
+  "hello": "123",
+  "id": "123",
+}
+`;

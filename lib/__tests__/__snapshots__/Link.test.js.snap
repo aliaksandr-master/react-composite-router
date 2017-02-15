@@ -1,4 +1,4 @@
-exports[`rendering should render something 1`] = `
+exports[`Link should render something 1`] = `
 <a
   className="LinkClass active active-state disabled"
   disabled={true}

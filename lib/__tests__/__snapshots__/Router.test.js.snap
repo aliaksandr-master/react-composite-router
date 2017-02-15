@@ -5,7 +5,7 @@ exports[`rendering should render something 1`] = `
   </span>
   <a
     className=""
-    href="state"
+    href="/state"
     onClick={[Function]}>
     Some
   </a>

@@ -51,7 +51,6 @@ RouterContext {
   },
   "state": Object {
     "composition": Object {},
-    "initialized": undefined,
     "name": "some",
     "params": Object {
       "some": 4,
@@ -69,7 +68,6 @@ RouterContext {
   "routesByName": Object {},
   "state": Object {
     "composition": Object {},
-    "initialized": true,
     "name": "some",
     "params": Object {},
   },
@@ -86,7 +84,6 @@ RouterContext {
   "routesByName": Object {},
   "state": Object {
     "composition": Object {},
-    "initialized": true,
     "name": "",
     "params": Object {},
   },
