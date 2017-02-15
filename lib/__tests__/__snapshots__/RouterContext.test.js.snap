@@ -9,6 +9,7 @@ Object {
 exports[`RouterContext should calc location 2`] = `
 RouterContext {
   "_changeListeners": Array [],
+  "_historyCleanupListener": [Function],
   "history": Object {
     "createHref": [Function],
     "listen": [Function],
@@ -20,6 +21,35 @@ RouterContext {
     "push": [Function],
     "replace": [Function],
   },
+  "routes": Array [
+    Route {
+      "additionalParams": Array [
+        "_hello",
+      ],
+      "availableParams": Array [
+        "some",
+        "_hello",
+      ],
+      "availableUrlParams": Array [
+        "some",
+      ],
+      "name": "state",
+      "params": Object {
+        "_hello": 3,
+      },
+      "path": "/some-state",
+      "pathMask": "/some-state",
+      "pathMaskExp": /^\\/some-state$/,
+      "pathMaskExpSrc": "/some-state",
+      "pathMaskParams": Array [],
+      "reroute": null,
+      "searchParams": Array [
+        "some",
+      ],
+      "slots": Object {},
+      "url": "/some-state?some",
+    },
+  ],
   "routesByName": Object {
     "state": Route {
       "additionalParams": Array [
@@ -65,10 +95,11 @@ RouterContext {
     [Function],
   ],
   "history": Object {},
+  "routes": Array [],
   "routesByName": Object {},
   "state": Object {
     "composition": Object {},
-    "name": "some",
+    "name": "some2",
     "params": Object {},
   },
 }
@@ -81,10 +112,11 @@ RouterContext {
     [Function],
   ],
   "history": Object {},
+  "routes": Array [],
   "routesByName": Object {},
   "state": Object {
     "composition": Object {},
-    "name": "",
+    "name": "some!",
     "params": Object {},
   },
 }
