@@ -5,10 +5,8 @@ exports[`rendering should render something 1`] = `
   </span>
   <a
     className=""
-    disabled={false}
     href="state"
-    onClick={[Function]}
-    target={undefined}>
+    onClick={[Function]}>
     Some
   </a>
   <noscript />
