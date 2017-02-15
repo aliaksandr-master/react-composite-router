@@ -1,10 +1,10 @@
 exports[`rendering should render something 1`] = `
 <a
-  className=""
-  disabled={false}
+  className="LinkClass active active-state disabled"
+  disabled={true}
   href="/"
   onClick={[Function]}
-  target={undefined}>
+  target="_blank">
   Hello!
 </a>
 `;
