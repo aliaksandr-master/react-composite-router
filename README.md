@@ -105,6 +105,8 @@ Slot.propTypes = {
 
 ## routeFactory::route::create(name, definition)
 
+name - String - required
+
 ```javascript
 const definition = {
   url: '/some/path/:id', // segment of url,
@@ -113,9 +115,17 @@ const definition = {
     someSlotName: Component 
   }
 };
+```
 
-const route = createRoute('some', definition);
 
-route.create('some.child', definitionChild); // create an child. name must starts from parent name
+### usage
+```javascript
+import { routeFactory } from 'react-composite-router';
+
+const routesTree = routeFactory();
+
+const route = routesTree.create('some', { url: '/some' });
+
+route.create('some.child', { url: '/child' }); // create an child. name must starts from parent name
 
 ```
