@@ -64,7 +64,7 @@ render(<Router history={history} routes={routesTree.getRoutes()}><Slot name="roo
 ```
 
 
-## Router
+## <Router />
 Router.propTypes = {
   children: PropTypes.node.isRequired,
   onChange: PropTypes.func,
@@ -74,7 +74,7 @@ Router.propTypes = {
 
 history - instance of history.js
 
-## Link
+## <Link />
 ```javascript
 Link.propTypes = {
   state: PropTypes.string.isRequired, // state name
@@ -92,7 +92,18 @@ Link.propTypes = {
 }
 ```
 
-## Slot
+## <Redirect />
+```javascript
+Redirect.propTypes = { // the same description as Link has 
+  state: PropTypes.string.isRequired,
+  reset: PropTypes.bool,
+  params: PropTypes.object,
+  reload: PropTypes.bool,
+  replace: PropTypes.bool
+}
+```
+
+## <Slot />
 ```javascript
 
 Slot.propTypes = {
@@ -118,7 +129,7 @@ const definition = {
 ```
 
 
-### usage
+usage
 ```javascript
 import { routeFactory } from 'react-composite-router';
 
@@ -127,5 +138,58 @@ const routesTree = routeFactory();
 const route = routesTree.create('some', { url: '/some' });
 
 route.create('some.child', { url: '/child' }); // create an child. name must starts from parent name
+
+```
+
+
+# HOCs
+
+## connect()(Component)
+
+Provide only component force-updating on router state change event
+
+```javascript
+import { connect } from 'react-composite-router';
+
+let MyComponent = () => <div>Hello!</div>;
+
+
+MyComponent = connect()(MyComponent); 
+
+<MyComponent/>
+```
+
+## referring()(Component)
+
+Provide possibility to create your own link or button.
+
+New Component will recognize additional props like:
+```
+state: PropTypes.string.isRequired,
+reset: PropTypes.bool,
+params: PropTypes.object,
+reload: PropTypes.bool,
+replace: PropTypes.bool
+```
+
+```javascript
+let MyComponent = ({ state, children, ...otherProps }) => (
+  <div {...otherProps} data-href={state.href} onClick={() => state.apply()}>{children}</div>
+);
+
+MyComponent.propTypes = {
+  state: PropTypes.shape({
+    href: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired, // name of state
+    apply: PropTypes.func.isRequired, // function for calling if some event was fired 
+    params: PropTypes.object.isRequired, // state params
+    isActive: PropTypes.bool.isRequired, // true if this state is active (exactly)
+    isActiveState: PropTypes.bool.isRequired // true if this state or child of this state is active
+  })
+};
+
+MyComponent = referring()(MyComponent);
+
+<MyComponent state="my-state-name" params={{ someParam: 3 }} reload={true} replace={false} reset={true}/>Some</MyComponent>;
 
 ```
