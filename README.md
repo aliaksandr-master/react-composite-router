@@ -16,7 +16,7 @@ $ npm install react-composite-router --save
 ```js
 import React from 'react';
 import { render } from 'react-dom';
-import { Router, Slot, Link, routeFactory } from 'react-composite-router';
+import { Router, Slot, Link, routesTree } from 'react-composite-router';
 import createBrowserHistory from 'history/createBrowserHistory';
 
 
@@ -36,9 +36,9 @@ const SettingsBody = ({ timeStamp, id }) => (
 
 
 // define the routes tree
-const routesTree = routeFactory();
+const tree = routesTree();
 
-const appRoute = routesTree.create('app', {
+const appRoute = tree.createRootRoute('app', {
   url: '/?timeStamp',
   slots: { 
     root: App 
@@ -48,7 +48,7 @@ const appRoute = routesTree.create('app', {
   }
 });
 
-appRoute.create('app.settings', {
+appRoute.createChildRoute('app.settings', {
   url: '/settings/:id',
   slots: { 
     appBody: SettingsBody 
@@ -116,7 +116,8 @@ Slot.propTypes = {
 };
 ```
 
-## routeFactory::route::create(name, definition)
+## routesTree().createRootRoute(name, definition)
+### routesTree().createRootRoute(name, definition).createChildRoute(childName, definition);
 
 name - String - required
 
@@ -133,13 +134,13 @@ const definition = {
 
 usage
 ```javascript
-import { routeFactory } from 'react-composite-router';
+import { routesTree } from 'react-composite-router';
 
-const routesTree = routeFactory();
+const tree = routesTree();
 
-const route = routesTree.create('some', { url: '/some' });
+const route = routesTree.createRootRoute('some', { url: '/some' });
 
-route.create('some.child', { url: '/child' }); // create an child. name must starts from parent name
+route.createChildRoute('some.child', { url: '/child' }); // create an child. name must starts from parent name
 
 ```
 
