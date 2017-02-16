@@ -196,3 +196,25 @@ MyComponent = referring()(MyComponent);
 <MyComponent state="my-state-name" params={{ someParam: 3 }} reload={true} replace={false} reset={true}/>Some</MyComponent>;
 
 ```
+
+# Using with redux
+
+this router provide simple redux-reducer. it useful if you are lazy as me =) 
+
+```javascript
+
+import { createStore, combineReducers } from 'redux';
+import routerReducer, { changeStateAction } from 'react-composite-router/lib/redux/reducer';
+
+const store = createStore(
+  combineReducers({
+    routing: routerReducer   
+  })
+);
+
+const onStateChange = (name, params) => {
+  store.dispatch(changeStateAction(name, params)); // deliberately call store.dispatch or create special handler. up to you
+};
+
+render(<Router history={history} onChange={onStateChange} routes={routesTree.getRoutes()}><Slot name="root" /></Router>, document.getElementById('root'));
+```
