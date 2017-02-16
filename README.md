@@ -64,17 +64,19 @@ render(<Router history={history} routes={routesTree.getRoutes()}><Slot name="roo
 ```
 
 
-## <Router />
+## &lt;Router /&gt;
+```javascript
 Router.propTypes = {
   children: PropTypes.node.isRequired,
   onChange: PropTypes.func,
   routes: routesPropTypes, // routes by name (returns from routesTree.getRoutes())
   history: PropTypes.object.isRequired // instance of history.js
 };
+```
 
 history - instance of history.js
 
-## <Link />
+## &lt;Link /&gt;
 ```javascript
 Link.propTypes = {
   state: PropTypes.string.isRequired, // state name
@@ -92,7 +94,7 @@ Link.propTypes = {
 }
 ```
 
-## <Redirect />
+## &lt;Redirect /&gt;
 ```javascript
 Redirect.propTypes = { // the same description as Link has 
   state: PropTypes.string.isRequired,
@@ -103,7 +105,7 @@ Redirect.propTypes = { // the same description as Link has
 }
 ```
 
-## <Slot />
+## &lt;Slot /&gt;
 ```javascript
 
 Slot.propTypes = {
