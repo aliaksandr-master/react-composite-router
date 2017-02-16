@@ -1,0 +1,15 @@
+exports[`redux reducer should set default values 1`] = `
+Object {
+  "name": "",
+  "params": Object {},
+}
+`;
+
+exports[`redux reducer should update state 1`] = `
+Object {
+  "name": "some",
+  "params": Object {
+    "param": 123,
+  },
+}
+`;
