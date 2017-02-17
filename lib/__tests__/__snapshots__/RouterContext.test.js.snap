@@ -1,4 +1,4 @@
-exports[`RouterContext should calc location 1`] = `
+exports[`RouterContext with FakeHistory should calc location 1`] = `
 Object {
   "hash": "",
   "pathname": "/some-state",
@@ -6,7 +6,170 @@ Object {
 }
 `;
 
-exports[`RouterContext should calc location 2`] = `
+exports[`RouterContext with FakeHistory should calc location 2`] = `
+RouterContext {
+  "_changeListeners": Array [],
+  "_historyCleanupListener": [Function],
+  "history": FakeHistory {
+    "_listeners": Array [
+      [Function],
+    ],
+    "action": "",
+    "location": Object {
+      "hash": "",
+      "pathname": "",
+      "search": "",
+    },
+  },
+  "location": Object {
+    "hash": "",
+    "pathname": "/some-state",
+    "search": "some=4",
+  },
+  "routes": Array [
+    Route {
+      "additionalParams": Array [],
+      "availableParams": Array [],
+      "availableUrlParams": Array [],
+      "name": "root",
+      "params": Object {},
+      "path": "/",
+      "pathMask": "/",
+      "pathMaskExp": /^\\/$/,
+      "pathMaskExpSrc": "/",
+      "pathMaskParams": Array [],
+      "reroute": null,
+      "searchParams": Array [],
+      "slots": Object {},
+      "url": "/",
+    },
+    Route {
+      "additionalParams": Array [
+        "_hello",
+      ],
+      "availableParams": Array [
+        "some",
+        "_hello",
+      ],
+      "availableUrlParams": Array [
+        "some",
+      ],
+      "name": "some-state",
+      "params": Object {
+        "_hello": 3,
+      },
+      "path": "/some-state",
+      "pathMask": "/some-state",
+      "pathMaskExp": /^\\/some-state$/,
+      "pathMaskExpSrc": "/some-state",
+      "pathMaskParams": Array [],
+      "reroute": null,
+      "searchParams": Array [
+        "some",
+      ],
+      "slots": Object {},
+      "url": "/some-state?some",
+    },
+  ],
+  "routesByName": Object {
+    "root": Route {
+      "additionalParams": Array [],
+      "availableParams": Array [],
+      "availableUrlParams": Array [],
+      "name": "root",
+      "params": Object {},
+      "path": "/",
+      "pathMask": "/",
+      "pathMaskExp": /^\\/$/,
+      "pathMaskExpSrc": "/",
+      "pathMaskParams": Array [],
+      "reroute": null,
+      "searchParams": Array [],
+      "slots": Object {},
+      "url": "/",
+    },
+    "some-state": Route {
+      "additionalParams": Array [
+        "_hello",
+      ],
+      "availableParams": Array [
+        "some",
+        "_hello",
+      ],
+      "availableUrlParams": Array [
+        "some",
+      ],
+      "name": "some-state",
+      "params": Object {
+        "_hello": 3,
+      },
+      "path": "/some-state",
+      "pathMask": "/some-state",
+      "pathMaskExp": /^\\/some-state$/,
+      "pathMaskExpSrc": "/some-state",
+      "pathMaskParams": Array [],
+      "reroute": null,
+      "searchParams": Array [
+        "some",
+      ],
+      "slots": Object {},
+      "url": "/some-state?some",
+    },
+  },
+  "state": Object {
+    "composition": Object {},
+    "name": "some-state",
+    "params": Object {
+      "some": 4,
+    },
+  },
+}
+`;
+
+exports[`RouterContext with FakeHistory should calc location with rerouting 1`] = `
+Object {
+  "hash": "",
+  "pathname": "/some-other",
+  "search": "",
+}
+`;
+
+exports[`RouterContext with FakeHistory should calc location with rerouting 2`] = `
+Object {
+  "hash": "",
+  "pathname": "/some-state",
+  "search": "",
+}
+`;
+
+exports[`RouterContext with FakeHistory should calc location with rerouting 3`] = `
+Object {
+  "hash": "",
+  "pathname": "/some-other",
+  "search": "",
+}
+`;
+
+exports[`RouterContext with new history  1`] = `null`;
+
+exports[`RouterContext with new history  2`] = `
+Object {
+  "name": "some-state",
+  "params": Object {
+    "_hello": 3,
+  },
+}
+`;
+
+exports[`RouterContext with new history should calc location 1`] = `
+Object {
+  "hash": "",
+  "pathname": "/some-state",
+  "search": "some=3",
+}
+`;
+
+exports[`RouterContext with new history should calc location 2`] = `
 RouterContext {
   "_changeListeners": Array [],
   "_historyCleanupListener": [Function],
@@ -126,12 +289,23 @@ RouterContext {
 }
 `;
 
-exports[`RouterContext should destroy 1`] = `
+exports[`RouterContext with new history should destroy 1`] = `
 RouterContext {
   "_changeListeners": Array [
     [Function],
   ],
-  "history": Object {},
+  "_historyCleanupListener": [Function],
+  "history": FakeHistory {
+    "_listeners": Array [
+      [Function],
+    ],
+    "action": "",
+    "location": Object {
+      "hash": "",
+      "pathname": "",
+      "search": "",
+    },
+  },
   "location": Object {
     "hash": "",
     "pathname": "/some-state",
@@ -203,13 +377,24 @@ RouterContext {
 }
 `;
 
-exports[`RouterContext should run every listener 1`] = `
+exports[`RouterContext with new history should run every listener 1`] = `
 RouterContext {
   "_changeListeners": Array [
     [Function],
     [Function],
   ],
-  "history": Object {},
+  "_historyCleanupListener": [Function],
+  "history": FakeHistory {
+    "_listeners": Array [
+      [Function],
+    ],
+    "action": "",
+    "location": Object {
+      "hash": "",
+      "pathname": "",
+      "search": "",
+    },
+  },
   "location": Object {
     "hash": "",
     "pathname": "/some-state",

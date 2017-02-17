@@ -1,0 +1,3 @@
+exports[`FakeHistory calc href 1`] = `"/?some=search#some-hash"`;
+
+exports[`FakeHistory calc href 2`] = `"/#some-hash"`;
