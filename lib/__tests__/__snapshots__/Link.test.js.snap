@@ -1,10 +1,29 @@
 exports[`Link should render something 1`] = `
 <a
-  className="LinkClass active active-state disabled"
-  disabled={true}
+  className="LinkClass"
   href="/"
   onClick={[Function]}
   target="_blank">
+  Hello!
+</a>
+`;
+
+exports[`Link should set classes 1`] = `
+<a
+  className="active active-path active-state disabled"
+  disabled={true}
+  href="/state"
+  onClick={[Function]}>
+  Hello!
+</a>
+`;
+
+exports[`Link should set classes 2`] = `
+<a
+  className="active-state disabled"
+  disabled={true}
+  href="/state"
+  onClick={[Function]}>
   Hello!
 </a>
 `;
