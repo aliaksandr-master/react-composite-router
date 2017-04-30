@@ -61,6 +61,7 @@
     "jest": "18.1.0",
     "jest-cli": "18.1.0",
     "lodash": "4.17.4",
+    "prop-types": "15.5.8",
     "react": "15.4.2",
     "react-addons-test-utils": "15.4.2",
     "react-dom": "15.4.2",
@@ -70,6 +71,7 @@
     "webpack": "1.14.0"
   },
   "peerDependencies": {
+    "prop-types": ">= 15.5.8",
     "react": ">= 15.4.2",
     "lodash": ">= 4.17.4",
     "urijs": ">= 1.18.4"
