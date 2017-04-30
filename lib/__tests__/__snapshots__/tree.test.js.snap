@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`route should create some route 1`] = `
 Object {
   "some": Route {
@@ -18,7 +20,7 @@ Object {
     },
     "path": "/some/:id",
     "pathMask": "/some/{{id}}",
-    "pathMaskExp": /^\\/some\\/([^\\/]+)$/,
+    "pathMaskExp": /\\^\\\\/some\\\\/\\(\\[\\^\\\\/\\]\\+\\)\\$/,
     "pathMaskExpSrc": "/some/([^/]+)",
     "pathMaskParams": Array [
       "id",
@@ -50,7 +52,7 @@ Object {
     },
     "path": "/some/:id/child",
     "pathMask": "/some/{{id}}/child",
-    "pathMaskExp": /^\\/some\\/([^\\/]+)\\/child$/,
+    "pathMaskExp": /\\^\\\\/some\\\\/\\(\\[\\^\\\\/\\]\\+\\)\\\\/child\\$/,
     "pathMaskExpSrc": "/some/([^/]+)/child",
     "pathMaskParams": Array [
       "id",
@@ -76,7 +78,7 @@ Object {
     "params": Object {},
     "path": "/second",
     "pathMask": "/second",
-    "pathMaskExp": /^\\/second$/,
+    "pathMaskExp": /\\^\\\\/second\\$/,
     "pathMaskExpSrc": "/second",
     "pathMaskParams": Array [],
     "reroute": null,

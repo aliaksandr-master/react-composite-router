@@ -1,9 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Link should render something 1`] = `
 <a
   className="LinkClass"
   href="/"
   onClick={[Function]}
-  target="_blank">
+  target="_blank"
+>
   Hello!
 </a>
 `;
@@ -13,7 +16,8 @@ exports[`Link should set classes 1`] = `
   className="active active-path active-state disabled"
   disabled={true}
   href="/state"
-  onClick={[Function]}>
+  onClick={[Function]}
+>
   Hello!
 </a>
 `;
@@ -23,7 +27,8 @@ exports[`Link should set classes 2`] = `
   className="active-state disabled"
   disabled={true}
   href="/state"
-  onClick={[Function]}>
+  onClick={[Function]}
+>
   Hello!
 </a>
 `;

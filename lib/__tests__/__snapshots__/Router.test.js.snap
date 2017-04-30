@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`rendering should render something 1`] = `
 <div>
   <span>
@@ -6,7 +8,8 @@ exports[`rendering should render something 1`] = `
   <a
     className=""
     href="/state"
-    onClick={[Function]}>
+    onClick={[Function]}
+  >
     Some
   </a>
   <noscript />

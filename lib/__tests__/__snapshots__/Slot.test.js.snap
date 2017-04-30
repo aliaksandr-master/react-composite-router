@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`rendering should render fallback function 1`] = `
 <span>
   Hello!

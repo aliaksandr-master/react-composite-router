@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`FakeHistory calc href 1`] = `"/?some=search#some-hash"`;
 
 exports[`FakeHistory calc href 2`] = `"/#some-hash"`;
