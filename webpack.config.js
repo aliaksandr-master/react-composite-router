@@ -39,20 +39,16 @@ config.externals = {
 config.module = {};
 
 
-
-
-config.module.noParse = [
-];
-
-
-
-config.module.loaders = [
+config.module.rules = [
   {
     test: /\.(?:jsx?)(?:\?.*)?$/i,
-    exclude: [
-    ],
-    loaders: [
-      `babel?cacheDirectory=${DIR_BABEL_CACHE_DIR}`
+    use: [
+      {
+        loader: 'babel-loader',
+        options: {
+          cacheDirectory: DIR_BABEL_CACHE_DIR
+        }
+      }
     ]
   }
 ];
@@ -74,18 +70,12 @@ config.plugins.push(new webpack.DefinePlugin({
 
 
 
-config.plugins.push(new webpack.optimize.DedupePlugin());
-
-
-
-config.plugins.push(new webpack.optimize.OccurenceOrderPlugin(true));
-
-
-
 config.resolve = {
-  root: DIR_SRC,
-  moduleDirectories: [ 'node_modules' ],
-  extensions: [ '', '.js' ],
+  modules: [
+    path.join(__dirname, DIR_SRC),
+    'node_modules'
+  ],
+  extensions: [ '.js' ],
   alias: {}
 };
 
@@ -100,9 +90,8 @@ config.resolveLoader = {
 
 
 config.bail = true;
-config.devtool = null;
+config.devtool = false;
 config.cache = false;
-config.debug = false;
 config.watch = false;
 
 
