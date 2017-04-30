@@ -1,7 +1,7 @@
 {
   "automock": false,
   "notify": true,
-  "testPathDirs": [
+  "roots": [
     "<rootDir>/lib"
   ],
   "resetModules": true,
@@ -27,8 +27,6 @@
   "moduleDirectories": [
     "node_modules"
   ],
-  "moduleNameMliber": {
-  },
   "transform": {
     "\\.jsx?$": "babel-jest"
   },
