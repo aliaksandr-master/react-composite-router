@@ -10,8 +10,11 @@ Object {
 
 exports[`RouterContext with FakeHistory should calc location 2`] = `
 RouterContext {
-  "_changeListeners": Array [],
   "_historyCleanupListener": [Function],
+  "_stateEmitter": EE {
+    "_destroyed": false,
+    "_listeners": Array [],
+  },
   "history": FakeHistory {
     "_listeners": Array [
       [Function],
@@ -152,9 +155,9 @@ Object {
 }
 `;
 
-exports[`RouterContext with new history  1`] = `null`;
+exports[`RouterContext with new history search state by location 1`] = `null`;
 
-exports[`RouterContext with new history  2`] = `
+exports[`RouterContext with new history search state by location 2`] = `
 Object {
   "name": "some-state",
   "params": Object {
@@ -173,8 +176,11 @@ Object {
 
 exports[`RouterContext with new history should calc location 2`] = `
 RouterContext {
-  "_changeListeners": Array [],
   "_historyCleanupListener": [Function],
+  "_stateEmitter": EE {
+    "_destroyed": false,
+    "_listeners": Array [],
+  },
   "history": Object {
     "createHref": [Function],
     "listen": [Function],
@@ -293,21 +299,14 @@ RouterContext {
 
 exports[`RouterContext with new history should destroy 1`] = `
 RouterContext {
-  "_changeListeners": Array [
-    [Function],
-  ],
   "_historyCleanupListener": [Function],
-  "history": FakeHistory {
+  "_stateEmitter": EE {
+    "_destroyed": true,
     "_listeners": Array [
       [Function],
     ],
-    "action": "",
-    "location": Object {
-      "hash": "",
-      "pathname": "",
-      "search": "",
-    },
   },
+  "history": null,
   "location": Object {
     "hash": "",
     "pathname": "/some-state",
@@ -381,11 +380,14 @@ RouterContext {
 
 exports[`RouterContext with new history should run every listener 1`] = `
 RouterContext {
-  "_changeListeners": Array [
-    [Function],
-    [Function],
-  ],
   "_historyCleanupListener": [Function],
+  "_stateEmitter": EE {
+    "_destroyed": false,
+    "_listeners": Array [
+      [Function],
+      [Function],
+    ],
+  },
   "history": FakeHistory {
     "_listeners": Array [
       [Function],
