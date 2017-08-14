@@ -79,7 +79,6 @@
     "jsx-a11y/aria-unsupported-elements": [0],
     "jsx-a11y/click-events-have-key-events": [0],
     "jsx-a11y/heading-has-content": [2],
-    "jsx-a11y/href-no-hash": [2],
     "jsx-a11y/html-has-lang": [0],
     "jsx-a11y/img-has-alt": [0],
     "jsx-a11y/img-redundant-alt": [0],
