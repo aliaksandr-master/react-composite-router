@@ -11,6 +11,7 @@ Object {
 exports[`RouterContext with FakeHistory should calc location 2`] = `
 RouterContext {
   "_historyCleanupListener": [Function],
+  "_hooks": Array [],
   "_stateEmitter": EE {
     "_destroyed": false,
     "_listeners": Array [],
@@ -177,6 +178,7 @@ Object {
 exports[`RouterContext with new history should calc location 2`] = `
 RouterContext {
   "_historyCleanupListener": [Function],
+  "_hooks": Array [],
   "_stateEmitter": EE {
     "_destroyed": false,
     "_listeners": Array [],
@@ -300,6 +302,7 @@ RouterContext {
 exports[`RouterContext with new history should destroy 1`] = `
 RouterContext {
   "_historyCleanupListener": [Function],
+  "_hooks": Array [],
   "_stateEmitter": EE {
     "_destroyed": true,
     "_listeners": Array [
@@ -381,6 +384,7 @@ RouterContext {
 exports[`RouterContext with new history should run every listener 1`] = `
 RouterContext {
   "_historyCleanupListener": [Function],
+  "_hooks": Array [],
   "_stateEmitter": EE {
     "_destroyed": false,
     "_listeners": Array [
