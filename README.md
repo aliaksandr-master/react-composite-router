@@ -147,32 +147,19 @@ route.createChildRoute('some.child', { url: '/child' }); // create an child. nam
 
 # HOCs
 
-## connect()(Component)
-
-Provide only component force-updating on router state change event
-
-```javascript
-import { connect } from 'react-composite-router';
-
-let MyComponent = () => <div>Hello!</div>;
-
-
-MyComponent = connect()(MyComponent); 
-
-<MyComponent/>
-```
-
-## referring()(Component)
+## referring('_statePropName', mapPropsFunc)(Component)
 
 Provide possibility to create your own link or button.
 
 New Component will recognize additional props like:
 ```
-state: PropTypes.string.isRequired,
-reset: PropTypes.bool,
-params: PropTypes.object,
-reload: PropTypes.bool,
-replace: PropTypes.bool
+mapPropsFunc = (props) => ({
+  state: PropTypes.string.isRequired,
+  reset: PropTypes.bool,
+  params: PropTypes.object,
+  reload: PropTypes.bool,
+  replace: PropTypes.bool
+})
 ```
 
 ```javascript
