@@ -124,7 +124,6 @@ RouterContext {
     },
   },
   "state": Object {
-    "composition": Object {},
     "name": "some-state",
     "params": Object {
       "some": 4,
@@ -292,7 +291,6 @@ RouterContext {
     },
   },
   "state": Object {
-    "composition": Object {},
     "name": "some-state",
     "params": Object {
       "some": 4,
@@ -377,7 +375,6 @@ RouterContext {
     },
   },
   "state": Object {
-    "composition": Object {},
     "name": "some-state",
     "params": Object {},
   },
@@ -471,7 +468,6 @@ RouterContext {
     },
   },
   "state": Object {
-    "composition": Object {},
     "name": "some-state",
     "params": Object {},
   },
