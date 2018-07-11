@@ -16,6 +16,7 @@ RouterContext {
     "_destroyed": false,
     "_listeners": Array [],
   },
+  "debug": false,
   "history": FakeHistory {
     "_listeners": Array [
       [Function],
@@ -183,6 +184,7 @@ RouterContext {
     "_destroyed": false,
     "_listeners": Array [],
   },
+  "debug": false,
   "history": Object {
     "createHref": [Function],
     "listen": [Function],
@@ -309,6 +311,7 @@ RouterContext {
       [Function],
     ],
   },
+  "debug": false,
   "history": null,
   "location": Object {
     "hash": "",
@@ -392,6 +395,7 @@ RouterContext {
       [Function],
     ],
   },
+  "debug": false,
   "history": FakeHistory {
     "_listeners": Array [
       [Function],
